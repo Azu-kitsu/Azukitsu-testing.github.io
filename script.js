@@ -1,13 +1,30 @@
 get = id => document.getElementById(id);
 
-function getPapers(src, number, target, filetype, plus) {
+function getPapers(src, number, target, filetype) {
     var load = "";
     for (let i = 1; i <= number; i += 1) {
-        load += `<img src="${src}${i}.${filetype}" alt="oldal ${i}" class="oldal">${plus}`;
+        load += `<img src="${src}${i}.${filetype}" alt="oldal ${i}" class="oldal"><br>`;
     }
     get(target).innerHTML += load;
 }
-getPapers("./31e1szpng/ÚjSágvári - 31. évfolyam 1. szám (17)-", 32, "paperView", "png", "<br>");
+function getPapers2Page(src, number, target, filetype) {
+    var load = "";
+    load += `<img src="${src}1.${filetype}" alt="oldal 1" class="oldal"><br>`;
+    for (let i = 2; i < number; i += 1) {
+        is_odd = (i + 1) % 2 != 0
+        if (is_odd) {
+            load += "<div class='teljesOldal'>"
+        }
+        load += `<img src="${src}${i}.${filetype}" alt="oldal ${i}" class="felOldal">`;
+        if (!is_odd) {
+            load += "</div><br>"
+        }        
+    }
+    load += `<img src="${src}${number}.${filetype}" alt="impresszum" class="oldal">`;
+
+    get(target).innerHTML += load;
+}
+getPapers2Page("./31e1szpng/ÚjSágvári - 31. évfolyam 1. szám (17)-", 32, "paperView", "png");
 
 //const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
 //console.log(vw);
