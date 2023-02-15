@@ -27,10 +27,16 @@ var toggle = 1;
 menu.addEventListener("click", event => {
     console.log(event);
     if (toggle) {
-        zoom.style.display = "none";
+        zoom.style.opacity = "0";
     } else {
-        zoom.style.display = "unset";
+        zoom.style.opacity = "0.7";
     }
     toggle += 1;
     toggle %= 2;
+})
+zoom.addEventListener("mouseenter", event => {
+    zoom.style.opacity = "1";
+})
+zoom.addEventListener("mouseleave", event => {
+    zoom.style.opacity = "0.7";
 })
