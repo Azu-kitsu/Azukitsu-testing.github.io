@@ -14,10 +14,10 @@ getPapers("./31e1szpng/ÚjSágvári - 31. évfolyam 1. szám (17)-", 32, "paperV
 //document.querySelectorAll(".oldal").forEach(img => img.style.width = `${vw*0.8}px`)
 
 var zoom = get("zoomSlider");
-var zoomValue = get("output");
-zoomValue.innerHTML = zoom.value;
+//var zoomValue = get("output");
+//zoomValue.innerHTML = zoom.value;
 zoom.oninput = function() {
-    output.innerHTML = this.value;
+    //output.innerHTML = this.value;
     get("paperView").style.width = `${this.value}%`;
     //document.querySelectorAll(".oldal").forEach(img => img.style.width = `${this.value}%`)
 }
