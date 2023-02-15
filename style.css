@@ -1,13 +1,15 @@
+*{
+    padding: 0;
+    margin: 0;
+}
 #paperView {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     height:100%;
-    width: 50%;
 }
 .oldal {
-    width: 100%;
     position: relative;
     left: 50%;
     transform: translate(-50%, 0%);
