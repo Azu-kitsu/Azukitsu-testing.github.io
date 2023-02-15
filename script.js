@@ -21,3 +21,16 @@ zoom.oninput = function() {
     get("paperView").style.width = `${this.value}%`;
     //document.querySelectorAll(".oldal").forEach(img => img.style.width = `${this.value}%`)
 }
+
+var menu = get("menuButton");
+var toggle = 1;
+menu.addEventListener("click", event => {
+    console.log(event);
+    if (toggle) {
+        zoom.style.opacity = "0";
+    } else {
+        zoom.style.opacity = "0.7";
+    }
+    toggle += 1;
+    toggle %= 2;
+})

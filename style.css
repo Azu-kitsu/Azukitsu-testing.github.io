@@ -45,10 +45,23 @@
     background: #04AA6D; /* Green background */
     cursor: pointer; /* Cursor on hover */
 }
-  
 .slider::-moz-range-thumb {
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
     background: #04AA6D; /* Green background */
     cursor: pointer; /* Cursor on hover */
+}
+
+#menu {
+    position: fixed;
+    right: 2%;
+    top: 2%;
+    width: 25px;
+}
+#menuButton {
+    width: 30px;
+    opacity: 0.8;
+}
+#menuButton:hover {
+    opacity: 1;
 }
