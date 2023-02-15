@@ -10,6 +10,7 @@
     height:100%;
 }
 .oldal {
+    width: 1980px;
     position: relative;
     left: 50%;
     transform: translate(-50%, 0%);
