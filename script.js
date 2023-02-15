@@ -9,6 +9,10 @@ function getPapers(src, number, target, filetype, plus) {
 }
 getPapers("./31e1szpng/ÚjSágvári - 31. évfolyam 1. szám (17)-", 32, "paperView", "png", "<br>");
 
+//const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+//console.log(vw);
+//document.querySelectorAll(".oldal").forEach(img => img.style.width = `${vw*0.8}px`)
+
 var zoom = get("zoomSlider");
 var zoomValue = get("output");
 zoomValue.innerHTML = zoom.value;
