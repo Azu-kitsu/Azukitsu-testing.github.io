@@ -13,6 +13,7 @@ var zoom = get("zoomSlider");
 var zoomValue = get("output");
 zoomValue.innerHTML = zoom.value;
 zoom.oninput = function() {
-    output.innerHTML = this.value
-    document.querySelectorAll(".oldal").forEach(img => img.style.width = `${this.value}%`)
+    output.innerHTML = this.value;
+    get("paperView").style.width = `${this.value}%`;
+    //document.querySelectorAll(".oldal").forEach(img => img.style.width = `${this.value}%`)
 }
