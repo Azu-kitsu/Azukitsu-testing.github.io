@@ -26,6 +26,7 @@ function getPapers2Page(src, number, target, filetype) {
 }
 getPapers2Page("./31e1szpng/ÚjSágvári - 31. évfolyam 1. szám (17)-", 32, "paperView", "png");
 
+get("paperView").style.width = screen.width*0.4*(1024/722) + "px";
 //const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
 //console.log(vw);
 //document.querySelectorAll(".oldal").forEach(img => img.style.width = `${vw*0.8}px`)
