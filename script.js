@@ -27,9 +27,9 @@ var toggle = 1;
 menu.addEventListener("click", event => {
     console.log(event);
     if (toggle) {
-        zoom.style.opacity = "0";
+        zoom.style.display = "none";
     } else {
-        zoom.style.opacity = "0.7";
+        zoom.style.display = "unset";
     }
     toggle += 1;
     toggle %= 2;
