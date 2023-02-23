@@ -27,22 +27,10 @@ function getPapers2Page(src, number, target, filetype) {
 getPapers2Page("./31e1szpng/ÚjSágvári - 31. évfolyam 1. szám (17)-", 32, "paperView", "png");
 
 get("paperView").style.width = screen.width*0.4*(1024/722) + "px";
-//const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-//console.log(vw);
-//document.querySelectorAll(".oldal").forEach(img => img.style.width = `${vw*0.8}px`)
 
-var zoom = get("zoomSlider");
-//var zoomValue = get("output");
-//zoomValue.innerHTML = zoom.value;
-zoom.oninput = function() {
-    //output.innerHTML = this.value;
-    get("paperView").style.width = `${this.value}%`;
-    //document.querySelectorAll(".oldal").forEach(img => img.style.width = `${this.value}%`)
-}
-
-var menu = get("menuButton");
+var menu_button = get("misc");
 var toggle = 1;
-menu.addEventListener("click", event => {
+menu_button.addEventListener("click", event => {
     console.log(event);
     if (toggle) {
         zoom.style.opacity = "0";
@@ -52,9 +40,18 @@ menu.addEventListener("click", event => {
     toggle += 1;
     toggle %= 2;
 })
-zoom.addEventListener("mouseenter", event => {
-    zoom.style.opacity = "1";
-})
-zoom.addEventListener("mouseleave", event => {
-    zoom.style.opacity = "0.7";
-})
+
+menu = get("menu")
+var offset = this.scrollY;
+window.onscroll = event => {  
+    // called when the window is scrolled.  
+    var new_offset = this.scrollY
+    
+    console.log(offset, new_offset)
+    if (offset < new_offset) {
+        menu.style.animation = "hide 2s forwards"
+    } else {
+        menu.style.animation = "show 1s forwards"
+    }
+    offset = new_offset
+} 
