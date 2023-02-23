@@ -95,12 +95,11 @@ body {
     display: unset;
     position: absolute;
     left: 50%;
-    width: 20%;
     transform: translate(-50%, 0%);
 }
 .kiadas_thumbnail {
     margin-top: 100px;
-
+    width: 700px;
     height:250px;
 }
 .kiadas_thumbnail input {
