@@ -8,6 +8,9 @@ function getPapers(src, number, target, filetype) {
     get(target).innerHTML += load;
 }
 function getPapers2Page(src, number, target, filetype) {
+    if (current_src == src) {
+        return
+    }
     var load = "";
     load += `<img src="${src}1.${filetype}" alt="oldal 1" class="oldal"><br>`;
     for (let i = 2; i < number; i += 1) {
@@ -22,11 +25,29 @@ function getPapers2Page(src, number, target, filetype) {
     }
     load += `<img src="${src}${number}.${filetype}" alt="impresszum" class="oldal">`;
 
-    get(target).innerHTML += load;
+    get(target).innerHTML = load;
 }
-getPapers2Page("./31e1szpng/ÚjSágvári - 31. évfolyam 1. szám (17)-", 32, "paperView", "png");
 
-get("paperView").style.width = screen.width*0.4*(1024/722) + "px";
+paperView = get("paperView")
+paperView.style.width = screen.width*0.4*(1024/722) + "px";
+kiadasok = get("kiadasok")
+current_src = ""
+
+function getKiadas(srcElem) {
+    console.log(srcElem);
+    var src = srcElem.attributes.src.value;
+    var src = src.replace("icon.png", "")
+    console.log(src)
+    getPapers2Page(src, 32, "paperView", "png");
+    current_src = src
+    kiadasok.style.display = "none"
+    paperView.style.display = "block"
+}
+
+function mainPage() {
+    kiadasok.style.display = "unset"
+    paperView.style.display = "none"
+}
 
 var menu_button = get("misc");
 var toggle = 1;

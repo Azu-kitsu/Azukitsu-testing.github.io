@@ -9,12 +9,35 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div id="paperView">
-    </div>
+    <div id="paperView"></div>
     <div id="menu">
         <input type="image" src="./menu.svg" id="misc" class="menuButton">
-        <input type="image" src="./res/ujsg title logo.svg" id="mainPageButton" class="menuButton">
+        <input type="image" src="./res/ujsg title logo.svg" onclick="mainPage()" id="mainPageButton" class="menuButton">
         
+    </div>
+    <div id="kiadasok">
+        <div class="kiadas_thumbnail">
+            <input type="image" src="./31e1szpng/icon.png" onclick="getKiadas(this)">
+            <div class="panel">
+                <div class="title"><p>ÚjSágvári - 31. évfolyam 1. szám</p></div>
+                <div class="text"></div>
+            </div>
+        </div>
+        <div class="kiadas_thumbnail">
+            <input type="image" src="./30e2szpng/icon.png" onclick="getKiadas(this)">
+            <div class="panel">
+                <div class="title"><p>ÚjSágvári - 30. évfolyam 2. szám</p></div>
+                <div class="text"></div>
+            </div>
+        </div>
+        <div class="kiadas_thumbnail">
+            <input type="image" src="./30e1szpng/icon.png" onclick="getKiadas(this)">
+            <div class="panel">
+                <div class="title"><p>ÚjSágvári - 30. évfolyam 1. szám</p></div>
+                <div class="text"></div>
+            </div>
+        </div>
+
     </div>
 </body>
 <script src="./script.js"></script>
