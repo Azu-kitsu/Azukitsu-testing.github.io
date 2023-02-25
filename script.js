@@ -12,7 +12,7 @@ function getPapers2Page(src, number, target, filetype) {
         return
     }
     var load = "";
-    load += `<img src="${src}1.${filetype}" alt="oldal 1" class="oldal"><br>`;
+    load += `<img src="${src}1.${filetype}" alt="oldal 1" class="oldal" style="margin-top: 60px;"><br>`;
     for (let i = 2; i < number; i += 1) {
         is_odd = (i + 1) % 2 != 0
         if (is_odd) {
@@ -20,27 +20,29 @@ function getPapers2Page(src, number, target, filetype) {
         }
         load += `<img src="${src}${i}.${filetype}" alt="oldal ${i}" class="felOldal">`;
         if (!is_odd) {
-            load += "</div><br>"
+            load += "</div>"
         }        
     }
-    load += `<img src="${src}${number}.${filetype}" alt="impresszum" class="oldal">`;
+    load += `</div><img src="${src}${number}.${filetype}" alt="impresszum" class="oldal">`;
 
     get(target).innerHTML = load;
 }
 
 paperView = get("paperView")
-paperView.style.width = screen.width*0.4*(1024/722) + "px";
+if (screen.width < screen.height) {
+    paperView.style.width = "calc(100vh*0.44)"
+} else {
+    paperView.style.width = screen.width*0.4*(1024/722) + "px";
+}
 kiadasok = get("kiadasok")
 current_src = ""
-
-document.documentElement.style.setProperty('--kiadas_width', screen.height*0.45 + "px");
 
 function getKiadas(srcElem) {
     console.log(srcElem);
     var src = srcElem.attributes.src.value;
-    var src = src.replace("icon.png", "")
+    var num = srcElem.attributes.num.value;
     console.log(src)
-    getPapers2Page(src, 32, "paperView", "png");
+    getPapers2Page(src, num, "paperView", "png");
     current_src = src
     kiadasok.style.display = "none"
     paperView.style.display = "block"
