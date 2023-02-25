@@ -33,6 +33,8 @@ paperView.style.width = screen.width*0.4*(1024/722) + "px";
 kiadasok = get("kiadasok")
 current_src = ""
 
+document.documentElement.style.setProperty('--kiadas_width', screen.height*0.45 + "px");
+
 function getKiadas(srcElem) {
     console.log(srcElem);
     var src = srcElem.attributes.src.value;
