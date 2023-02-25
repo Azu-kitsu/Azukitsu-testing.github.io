@@ -47,6 +47,8 @@ function getKiadas(srcElem) {
 }
 
 function mainPage() {
+    document.body.style.animation = "hide 0s forwards"
+    document.body.style.animation = "show_down 1.5s forwards"
     kiadasok.style.display = "unset"
     paperView.style.display = "none"
 }
@@ -71,6 +73,10 @@ window.onscroll = event => {
     var new_offset = this.scrollY
     
     console.log(offset, new_offset)
+    if (new_offset < 100) {
+        menu.style.animation = "show 1s forwards"
+        return
+    }
     if (offset < new_offset) {
         menu.style.animation = "hide 2s forwards"
     } else {
