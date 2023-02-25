@@ -5,7 +5,7 @@
     scrollbar-color: var(--highlight) var(--accent);
 }
 body {
-    background-color:var(--darkest);
+    background-color: var(--darkest);
     animation: show_down 1.5s forwards;
 }
 #paperView {
@@ -109,6 +109,7 @@ body {
     display: unset;
     position: absolute;
     left: 50%;
+    margin-top: 100px;
     height: min-content;
     transform: translate(-50%, 0%);
 }
@@ -118,7 +119,7 @@ body {
 }
 .kiadas_thumbnail {
     cursor: pointer;
-    margin-top: 100px;
+    margin-top: 50px;
     width: var(--kiadas_width);
     height: calc(var(--kiadas_width) * 0.36);
 }
