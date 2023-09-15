@@ -86,3 +86,28 @@ window.onscroll = event => {
     }
     offset = new_offset
 } 
+
+// dark-mode light-mode switch
+const lightswitch = document.getElementById("lightswitch")
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute("data-theme", "dark")
+        localStorage.setItem('theme', 'dark'); // save theme to local storage
+    } else {
+        document.documentElement.setAttribute("data-theme", "light")
+        localStorage.setItem('theme', 'light'); // save theme to local storage
+    }
+}
+
+lightswitch.addEventListener("change", switchTheme, false);
+
+const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+    }
+}
