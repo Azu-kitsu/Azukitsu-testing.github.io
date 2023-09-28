@@ -35,11 +35,12 @@ body {
 
 #menu {
     position: fixed;
-    top: 0%;
+    top: 0;
     width: 100%;
     height: 60px;
     background-color: var(--middle);
     animation: show 1s forwards;
+    display: block;
     z-index: 1;
 }
 

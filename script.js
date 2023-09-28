@@ -1,5 +1,5 @@
 get = id => document.getElementById(id);
-
+//get newspaper papers
 function getPapers(src, number, target, filetype) {
     var load = "";
     for (let i = 1; i <= number; i += 1) {
@@ -47,6 +47,7 @@ function getKiadas(srcElem) {
     kiadasok.style.display = "none"
     paperView.style.display = "block"
 }
+//end generation
 
 function mainPage() {
     document.body.style.animation = "hide 0s forwards"
@@ -68,6 +69,8 @@ menu_button.addEventListener("click", event => {
     toggle %= 2;
 })
 
+//Navbar hide and show
+
 menu = get("menu")
 var offset = this.scrollY;
 window.onscroll = event => {  
@@ -80,12 +83,15 @@ window.onscroll = event => {
         return
     }
     if (offset < new_offset) {
-        menu.style.animation = "hide 2s forwards"
+        menu.style.animation = "hide 1s forwards"
     } else {
-        menu.style.animation = "show 1s forwards"
+        if (Math.abs(offset - new_offset) > 150) {
+            menu.style.animation = "show 1s forwards"
+        }
     }
     offset = new_offset
 } 
+// end Navbar hide and show
 
 // dark-mode light-mode switch
 const lightswitch = document.getElementById("lightswitch")
@@ -111,3 +117,4 @@ if (currentTheme) {
         toggleSwitch.checked = true;
     }
 }
+// end darkmode switch
