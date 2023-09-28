@@ -56,6 +56,7 @@ function mainPage() {
     document.body.style.animation = "show_down 1.5s forwards"
     kiadasok.style.display = "unset"
     paperView.style.display = "none"
+    window.scrollTo(0, 0)
 }
 //other buttons?
 var menu_button = get("misc");

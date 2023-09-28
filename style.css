@@ -131,8 +131,10 @@ body {
     transform: translate(-50%, 0%);
 }
 @keyframes show_down {
-    from {top: 100%; overflow: hidden;}
-    to {top: 0%; overflow: auto}
+    0% {overflow: hidden;}
+    1% {top: 100%; overflow: hidden;}
+    99% {top: 0%}
+    100% {overflow: auto}
 }
 .kiadas_thumbnail {
     cursor: pointer;
