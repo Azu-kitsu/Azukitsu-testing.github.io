@@ -49,13 +49,15 @@ function getKiadas(srcElem) {
 }
 //end generation
 
+//Buttons
+//mainpage button "újságvári"
 function mainPage() {
     document.body.style.animation = "hide 0s forwards"
     document.body.style.animation = "show_down 1.5s forwards"
     kiadasok.style.display = "unset"
     paperView.style.display = "none"
 }
-
+//other buttons?
 var menu_button = get("misc");
 var toggle = 1;
 menu_button.addEventListener("click", event => {
