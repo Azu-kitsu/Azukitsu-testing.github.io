@@ -2,7 +2,7 @@
     --kiadas_width: calc(100vh * 0.45);
     --highlight: #AED7D8;
     --accent: #6db478;
-    --darkest: #262626;
+    --darkest: #dfa8a8;
     --middle: #fcf5e4;
     --muted: #e4dcc8;
     --text: #262626;
@@ -31,16 +31,23 @@ body {
     background-color: var(--darkest);
     animation: show_down 1.5s forwards;
 }
+
 #paperView {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     height:100%;
-    width: calc(100lvh*0.4);
+    width: calc(100vw);
     display: block;
     display: none;
 }
+@media (orientation: landscape) {
+    #paperView {
+        width: calc(100vw*0.4*(1024/722));
+    }
+}
+
 .oldal {
     width: 75%;
     position: relative;
@@ -94,6 +101,7 @@ body {
     transform: translate(-50%, -50%);
     height: 75%;
     shape-rendering: geometricPrecision;
+    filter: brightness(1.5)
 }
 #misc {
     display: none;
@@ -190,17 +198,46 @@ body {
     z-index: 1;
 }
 
-#lightswitch {
-    width: 80px;
-    height: 26px;
-    background: #333;
-    margin: 20px auto;
+/* Dark mode Toggle Button */
+#toggle {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 60px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: var(--middle);
     position: relative;
-    border-radius: 50px;
+    left: 50%;
+    top: 0px;
+    transform: translateX(-50%);
+    transition: all 0.5s ease-in;
+    cursor: pointer;
+    z-index: 1;
 }
   
-.checkmarkcontainer {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: calc(var(--kiadas_width) *0.035);
-    color: var(--text-contrast);
+/* Making a dot switch inside the Toggle Button */
+#toggle::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: var(--text);
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+    transition: all 0.5s ease-in;
+  }
+  
+  /* Changing toggle button background when checked */
+#toggle:checked {
+    background: var(--middle);
 }
+  
+  /* Changing dot switch color and moving to the right side when checked */
+#toggle:checked::before {
+    background: var(--text);
+    left: 32px;
+}
+/* dark mode end */

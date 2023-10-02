@@ -29,11 +29,6 @@ function getPapers2Page(src, number, target, filetype) {
 }
 
 paperView = get("paperView")
-if (screen.width < screen.height) {
-    paperView.style.width = "calc(100vh*0.44)"
-} else {
-    paperView.style.width = screen.width*0.4*(1024/722) + "px";
-}
 kiadasok = get("kiadasok")
 current_src = ""
 
@@ -97,7 +92,7 @@ window.onscroll = event => {
 // end Navbar hide and show
 
 // dark-mode light-mode switch
-const lightswitch = document.getElementById("lightswitch")
+const lightswitch = document.getElementById("toggle")
 
 function switchTheme(e) {
     if (e.target.checked) {
@@ -121,3 +116,4 @@ if (currentTheme) {
     }
 }
 // end darkmode switch
+
