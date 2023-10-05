@@ -20,7 +20,6 @@
     --text: #c5b8a1;
     --text-contrast: #c5b8a1;
 }
-
 *{
     padding: 0;
     margin: 0;
@@ -32,37 +31,8 @@ body {
     animation: show_down 1.5s forwards;
 }
 
-#paperView {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height:100%;
-    width: calc(100vw);
-    display: block;
-    display: none;
-}
-@media (orientation: landscape) {
-    #paperView {
-        width: calc(100vw*0.4*(1024/722));
-    }
-}
 
-.oldal {
-    width: 75%;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%, 0%);
-}
-.felOldal {
-    width: 50%;
-    position: relative;
-    left: 50%;
-}
-.teljesOldal {
-    transform: translate(-50%, 0%);
-}
-
+/*NAVBAR*/
 #menu {
     position: fixed;
     top: 0;
@@ -73,7 +43,6 @@ body {
     display: block;
     z-index: 1;
 }
-
 @keyframes hide {
     from {top: 0%;}
     to {top: -10%;}
@@ -82,7 +51,6 @@ body {
     from {top: -10%;}
     to {top: 0%;}
 }
-
 .menuButton {
     height: 50%;
     opacity: 0.8;
@@ -106,36 +74,18 @@ body {
 #misc {
     display: none;
 }
-::-webkit-scrollbar {
-    width: 7px;
-}
-/* Track */
-::-webkit-scrollbar-track {
-    background: var(--accent);
-}
+/*NAVBAR end*/
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: var(--highlight);
-}
-  
-  /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: var(--middle) ;
-}
 
-::-webkit-scrollbar-thumb:active {
-    background: var(--darkest);
-}
-
+/*ARTICLE THUMBNAILS*/
 
 #kiadasok {
     animation: show_down 1s forwards;
     display: unset;
     position: absolute;
     left: 50%;
+    width: min-content;
     margin-top: 100px;
-    height: min-content;
     transform: translate(-50%, 0%);
 }
 @keyframes show_down {
@@ -146,21 +96,22 @@ body {
 }
 .kiadas_thumbnail {
     cursor: pointer;
-    margin-top: 50px;
+    margin-bottom: 50px;
     width: var(--kiadas_width);
-    height: calc(var(--kiadas_width) * 0.36);
+    height: calc(var(--kiadas_width) * .35)
 }
-
 .kiadas_thumbnail img {
+    object-fit: cover;
+    object-position: 50% 15%;
     position: relative;
     top: 50%;
     float:left;
     transform: translateY(-50%);
-    height: 100%;
-
+    height: 125px;
+    width: 125px;
 }
 .panel {
-    width: 63%;
+    width: 64%;
     height: 100%;
     float: right;
 }
@@ -188,18 +139,48 @@ body {
     top: 2%;
     padding: 0;
 }
-
-.link {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
+@media (orientation: landscape) {
+    
 }
+/*ARTICLE THUMBNAILS end*/
+
+
+/*ARTICLES*/
+#paperView {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height:100%;
+    width: calc(100vw);
+    display: block;
+    display: none;
+}
+@media (orientation: landscape) {
+    #paperView {
+        width: calc(100vw*0.4*(1024/722));
+    }
+}
+.oldal {
+    width: 75%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+.felOldal {
+    width: 50%;
+    position: relative;
+    left: 50%;
+}
+.teljesOldal {
+    transform: translate(-50%, 0%);
+}
+/*ARTICLES end*/
+
 
 /* Dark mode Toggle Button */
 #toggle {
+    margin-bottom: 10px;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -241,3 +222,28 @@ body {
     left: 32px;
 }
 /* dark mode end */
+
+
+/*custom scrollbar*/
+::-webkit-scrollbar {
+    width: 7px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--accent);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--highlight);
+}
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--middle) ;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: var(--darkest);
+}
+/*custom scrollbar end*/
