@@ -73,7 +73,7 @@ body {
     transform: translate(-50%, -50%);
     height: 75%;
     shape-rendering: geometricPrecision;
-    filter: brightness(1.5)
+    filter: brightness(1.5);
 }
 #misc {
     display: none;
@@ -284,6 +284,26 @@ body {
     left: 32px;
 }
 /* dark mode end */
+#info-button {
+    width: 10%;
+    margin-bottom: 15px;
+    position: relative;
+    left: 50%;
+    top: 0px;
+    transform: translateX(-50%);
+    fill: #146B6D;
+    filter: brightness(1.5)
+}
+#informacio {
+    animation: show_down 1s forwards;
+    display: unset;
+    position: absolute;
+    left: 50%;
+    width: min-content;
+    margin-top: 100px;
+    transform: translate(-50%, 0%);
+    
+}
 
 
 /*custom scrollbar*/
