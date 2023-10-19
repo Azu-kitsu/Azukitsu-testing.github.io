@@ -31,6 +31,7 @@ body {
     background-color: var(--darkest);
     animation: show_down 1.5s forwards;
     transition: all 0.5s ease-in;
+    overflow: hidden;
 }
 
 
@@ -55,6 +56,7 @@ body {
     from {top: -10%;}
     to {top: 0%;}
 }
+
 .menuButton {
     height: 50%;
     opacity: 0.8;
@@ -92,12 +94,7 @@ body {
     margin-top: 100px;
     transform: translate(-50%, 0%);
 }
-@keyframes show_down {
-    0% {overflow: hidden;}
-    1% {top: 100%; overflow: hidden;}
-    99% {top: 0%}
-    100% {overflow: auto}
-}
+
 .kiadas_thumbnail {
     cursor: pointer;
     margin-bottom: 50px;
@@ -151,12 +148,6 @@ body {
         left: 50%;
         margin-top: 100px;
         transform: translate(-50%, 0%);
-    }
-    @keyframes show_down {
-        0% {overflow: hidden;}
-        1% {top: 100%; overflow: hidden;}
-        99% {top: 0%}
-        100% {overflow: auto}
     }
     .kiadas_thumbnail {
         cursor: pointer;
@@ -295,13 +286,12 @@ body {
 }
 #informacio {
     animation: show_down 1s forwards;
-    display: unset;
+    display: none;
     position: absolute;
     left: 50%;
     width: min-content;
     margin-top: 100px;
     transform: translate(-50%, 0%);
-    
 }
 
 
@@ -328,3 +318,15 @@ body {
     background: var(--darkest);
 }
 /*custom scrollbar end*/
+
+
+/*animations*/
+@keyframes show_down {
+    0% {
+        overflow: hidden;
+        opacity: 0;
+    }
+    1% {top: 100%; overflow: hidden;}
+    99% {top: 0%}
+    100% {overflow: auto}
+}

@@ -30,6 +30,7 @@ function getPapers2Page(src, number, target, filetype) {
 
 paperView = get("paperView")
 kiadasok = get("kiadasok")
+informacio = get("informacio")
 current_src = ""
 
 function getKiadas(srcElem) {
@@ -57,9 +58,18 @@ function mainPage() {
     document.body.style.animation = "show_down 1.5s forwards"
     kiadasok.style.display = "unset"
     paperView.style.display = "none"
+    informacio.style.display = "none"
     window.scrollTo(0, 0)
 }
 //other buttons?
+// information button
+function information() {
+    document.body.style.animation = "hide 0s forwards"
+    document.body.style.animation = "show_down 1.5s forwards"
+    kiadasok.style.display = "none"
+    informacio.style.display = "unset"
+}
+
 var menu_button = get("misc");
 var toggle = 1;
 menu_button.addEventListener("click", event => {
