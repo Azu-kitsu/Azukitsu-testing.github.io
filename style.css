@@ -220,7 +220,6 @@ body {
 }
 @media (orientation: landscape) {
     #paperView {
-        width: calc(100vw*0.4*(1024/722));
     }
 }
 .oldal {

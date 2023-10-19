@@ -42,6 +42,12 @@ function getKiadas(srcElem) {
     kiadasok.style.display = "none"
     paperView.style.display = "block"
 }
+
+var mediaquery = window.matchMedia("(orientation: landscape)")
+const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+if (mediaquery.matches) {
+    paperView.style.width = `${1.0*vw*0.5*(1024/722)}px`;
+}
 //end generation
 
 //Buttons
